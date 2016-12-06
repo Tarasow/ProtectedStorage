@@ -4,7 +4,6 @@
 #include <unistd.h>
 #include <dirent.h>
 #include <errno.h>
-#include <stdio.h>
 #include <string.h>
 #ifdef HAVE_SYS_XATTR_H
 #include <sys/xattr.h>

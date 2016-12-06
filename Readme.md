@@ -6,7 +6,7 @@ Protected storage 0.92 RC
 
 Created on C++ using FUSE library and Qt
 
-Provides the functionality of creating and using protected storage with any data.
+It provides the functionality of creating and using protected storage with any data.
 The mounted directory is similar to an regular logical disk.
 
 
@@ -36,7 +36,6 @@ To destroy the storage, push the button "Destroy storage".
 #### If an error occurs, the program will report about it and offer some solutions.
 
 
-## Wish you will find the using of this program convenient and useful.
+## I wish you will find the using of this program convenient and useful.
 
 ### 2016, Tarasov Kirill, https://github.com/Tarasow/ProtectedStorage
-
