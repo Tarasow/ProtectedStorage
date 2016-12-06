@@ -1,7 +1,6 @@
 #include "ProtectedStorage.h"
 #include "VirtualFilesystem.h"
 #include "GostHash.h"
-#include <cstdlib>
 #include <thread>
 #include <future>
 
