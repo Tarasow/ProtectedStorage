@@ -53,7 +53,8 @@ void StorageWindow::setupConnections() {
 
 void StorageWindow::setupHelp() {
 	size_t textSize = 5;
-	auto text = std::make_unique<const char*[]>(textSize);
+	auto text = std::make_unique<const char*[]>(textSize); // std::array<const char*>?
+	// QLabel умеет html
 	text[0] = "How to use the program";
 	text[1] = "At first, fill in all the fields:\n"
 			  "Root directory - where you want to store\nyour encrypted data.\n"
@@ -111,7 +112,7 @@ void StorageWindow::closeEvent(QCloseEvent* event) {
 
 
 bool StorageWindow::createStorage() {
-	auto root = ui->lineEdit->text().toStdString();
+	auto root = ui->lineEdit->text().toStdString();  // std::array<const char*>?
 	if (root.empty()) {
 		this->error("Root directory field is empty.\nPlease, fill in all the fields.");
 		return false;
@@ -183,14 +184,14 @@ void StorageWindow::error(const char* reason) {
 
 void StorageWindow::rootFileClicked() {
 	QFileDialog qfd;
-	qfd.exec();
-	ui->lineEdit->setText(qfd.directory().absolutePath());
+	qfd.exec(); // тут может быть cancel?
+	ui->lineEdit->setText(qfd.directory().absolutePath()); // тут не должна быть директория?
 }
 
 
 void StorageWindow::mountFileClicked() {
 	QFileDialog qfd;
-	qfd.exec();
+	qfd.exec(); // тут может быть cancel?
 	ui->lineEdit_2->setText(qfd.directory().path());
 }
 

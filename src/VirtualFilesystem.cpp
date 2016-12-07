@@ -165,7 +165,7 @@ int vfs_truncate(const char* path, off_t off) {
 	struct stat buf;
 	stat(fpath, &buf);
 	auto oldSize = buf.st_size;
-	int fd = open(fpath, O_RDWR);
+	int fd = open(fpath, O_RDWR); // течет?
 	auto text = std::make_unique<char[]>(bytesIn64Bits);
 	int rsize = gostcipher::readAndDecrypt(text.get(), bytesIn64Bits, vfsData->key,
 										   fd, oldSize - static_cast<off_t>(bytesIn64Bits));
@@ -218,7 +218,7 @@ int vfs_statfs(const char* path, struct statvfs* statv) {
 	char fpath[PATH_MAX];
 	vfs_fullpath(fpath, path);
 
-	int ret = statvfs(fpath, statv);
+	int ret = statvfs(fpath, statv); // тут правда возвращается?
 	return (ret < 0 ? -errno : ret);
 }
 

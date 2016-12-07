@@ -2,6 +2,7 @@
 #define HELPDIALOG_H
 
 #include <QDialog>
+// http://doc.qt.io/qt-4.8/qmessagebox.html
 
 namespace Ui {
 	class HelpDialog;

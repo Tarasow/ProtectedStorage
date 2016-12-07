@@ -14,6 +14,7 @@ HelpDialog::~HelpDialog()
 }
 
 void HelpDialog::setupText(const char** text) {
+	// сильно error-prone, не надо так
 	this->setWindowTitle(text[0]);
 	ui->label->setText(text[0]);
 	ui->label_2->setText(text[1]);

@@ -2,6 +2,7 @@
 #define ERRORDIALOG_H
 
 #include <QDialog>
+// http://doc.qt.io/qt-4.8/qerrormessage.html -- go standard dialogs!
 
 namespace Ui {
 	class ErrorDialog;
